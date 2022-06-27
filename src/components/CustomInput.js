@@ -5,12 +5,13 @@ import {
   FormLabel,
   Input,
   InputGroup,
+  InputLeftElement,
   InputRightElement,
 } from '@chakra-ui/react';
 import { useState } from 'react';
 import { AiFillCheckCircle, AiFillCloseCircle } from 'react-icons/ai';
 
-const CustomInput = ({ error, success, errorText }) => {
+const CustomInput = ({ error, success, errorText, leftIcon, rightIcon }) => {
   const [input, setInput] = useState('');
 
   return (
@@ -23,7 +24,7 @@ const CustomInput = ({ error, success, errorText }) => {
           <InputRightElement
             pointerEvents="none"
             children={
-             <AiFillCheckCircle color="Green" fontSize={24} /> }
+             rightIcon ? rightIcon : <AiFillCheckCircle color="Green" fontSize={24} /> }
           />
         ) : (
           ''
@@ -32,7 +33,16 @@ const CustomInput = ({ error, success, errorText }) => {
           <InputRightElement
             pointerEvents="none"
             children={
-              <AiFillCloseCircle color="red" fontSize={24} />}
+              rightIcon ? rightIcon : <AiFillCheckCircle color="Green" fontSize={24} /> }
+          />
+        ) : (
+          ''
+        )}
+        {leftIcon ? (
+          <InputLeftElement
+            pointerEvents="none"
+            children={
+              leftIcon ? leftIcon : '' }
           />
         ) : (
           ''

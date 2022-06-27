@@ -14,7 +14,7 @@ function App() {
           leftIcon={<FaEnvelope />}
           done
         />
-        <CustomInput    errorText={'please enter a valid email address'}/>
+        <CustomInput leftIcon={<FaEnvelope/>}   errorText={'please enter a valid email address'}/>
       </Stack>
       <Box ml={'50px'} mt={'50px'}>
       <UserProfile/>

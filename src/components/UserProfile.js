@@ -57,7 +57,7 @@ const UserProfile = () => {
           <CustomBtn   text="Edit Profile" leftIcon={<Image src="edit.png" />} />
         </Box>
         <Box>
-          <CustomBtn text="Edit Profile" leftIcon={<Image src="edit.png" />} />
+          <CustomBtn text="Logout" leftIcon={<Image src="signout.png" />} />
         </Box>
       </SimpleGrid>
     </Box>
