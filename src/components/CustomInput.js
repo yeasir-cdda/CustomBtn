@@ -11,7 +11,7 @@ import {
 import { useState } from 'react';
 import { AiFillCheckCircle, AiFillCloseCircle } from 'react-icons/ai';
 
-const CustomInput = ({label, placeholder, error, success, errorText, leftIcon, rightIcon }) => {
+const CustomInput = ({label, placeholder, hint, error, success, errorText, leftIcon, rightIcon }) => {
   // const [input, setInput] = useState('');
 
   return (
@@ -66,7 +66,7 @@ const CustomInput = ({label, placeholder, error, success, errorText, leftIcon, r
 
       {!error ? (
         <FormHelperText>
-          Enter the email you'd like to receive the newsletter on.
+          {typeof hint ==='string' ? hint :''}
         </FormHelperText>
       ) : (
         <FormErrorMessage>
