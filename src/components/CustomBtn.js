@@ -1,7 +1,15 @@
 import { Box, Button, Spinner } from '@chakra-ui/react';
 import { AiFillCheckCircle } from 'react-icons/ai';
 
-const CustomBtn = ({ loading, done, text, leftIcon, rightIcon, disabled }) => {
+const CustomBtn = ({
+  loading,
+  loadingText,
+  done,
+  text,
+  leftIcon,
+  rightIcon,
+  disabled,
+}) => {
   return (
     <>
       {/* normal button  */}
@@ -37,7 +45,9 @@ const CustomBtn = ({ loading, done, text, leftIcon, rightIcon, disabled }) => {
             cursor: 'not-allowed',
           }}
           textTransform="capitalize"
-          loadingText={'Submitting'}
+          loadingText={
+            typeof loadingText === 'string' ? loadingText : 'Submitting'
+          }
           fontWeight="normal"
           height="40px"
           width="117px"

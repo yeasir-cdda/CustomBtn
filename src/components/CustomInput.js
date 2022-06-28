@@ -11,11 +11,12 @@ import {
 import { useState } from 'react';
 import { AiFillCheckCircle, AiFillCloseCircle } from 'react-icons/ai';
 
-const CustomInput = ({ error, success, errorText, leftIcon, rightIcon }) => {
-  const [input, setInput] = useState('');
+const CustomInput = ({label, placeholder, error, success, errorText, leftIcon, rightIcon }) => {
+  // const [input, setInput] = useState('');
 
   return (
     <FormControl isInvalid={error}>
+      <FormLabel>{typeof label === 'string' ? label : ''}</FormLabel>
       <InputGroup 
       
       size={'lg'}
@@ -24,7 +25,7 @@ const CustomInput = ({ error, success, errorText, leftIcon, rightIcon }) => {
           <InputRightElement
             pointerEvents="none"
             children={
-             rightIcon ? rightIcon : <AiFillCheckCircle color="Green" fontSize={24} /> }
+              <AiFillCheckCircle color="Green" fontSize={24} /> }
           />
         ) : (
           ''
@@ -33,7 +34,7 @@ const CustomInput = ({ error, success, errorText, leftIcon, rightIcon }) => {
           <InputRightElement
             pointerEvents="none"
             children={
-              rightIcon ? rightIcon : <AiFillCheckCircle color="Green" fontSize={24} /> }
+              <AiFillCloseCircle color="red" fontSize={24} /> }
           />
         ) : (
           ''
@@ -47,10 +48,19 @@ const CustomInput = ({ error, success, errorText, leftIcon, rightIcon }) => {
         ) : (
           ''
         )}
+        {rightIcon ? (
+          <InputRightElement
+            pointerEvents="none"
+            children={
+              rightIcon ? rightIcon : '' }
+          />
+        ) : (
+          ''
+        )}
         <Input 
         _focus={{ backgroundColor : 'green.100'}}
         _focusVisible ={{borderColor:'green', borderWidth:'2px'}}
-       
+       placeholder = {typeof placeholder ==='string' ? placeholder :''}
         id="email" type="email" />
       </InputGroup>
 
