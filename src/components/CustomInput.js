@@ -22,6 +22,7 @@ const CustomInput = ({
   errorText,
   leftIcon,
   rightIcon,
+  name
 }) => {
   // const [input, setInput] = useState('');
 
@@ -66,7 +67,8 @@ const CustomInput = ({
           _focusVisible={{ borderColor: "green", borderWidth: "2px" }}
           placeholder={typeof placeholder === "string" ? placeholder : ""}
           id={typeof id === "string" ? id : ""}
-          type={typeof type === "string" ? type : ""}
+          name = {typeof name === 'string' ?? name}
+          type={typeof type === "string" ? type : "text"}
         />
       </InputGroup>
 
